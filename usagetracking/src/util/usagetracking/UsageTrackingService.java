@@ -198,7 +198,7 @@ public class UsageTrackingService {
 
    private String _dumpFolder;
 
-   private TLongList _keys = new TLongArrayList();
+   private TLongArrayList _keys = new TLongArrayList();
 
    private List<int[]> _data = new ArrayList<>();
 
@@ -293,7 +293,7 @@ public class UsageTrackingService {
 
    /** Data structure for collected data: the keys contain timestamps rounded by {@link #round(long)}, in ascending order.
     * The corresponding values for each timestamp are to be found in the List from {@link #getData()}, using the same index. */
-   public TLongList getKeys() {
+   public TLongArrayList getKeys() {
       return _keys;
    }
 
@@ -485,7 +485,7 @@ public class UsageTrackingService {
          long t = _keys.get(i);
          int dayOfMonth = TimeUtils.getCalendarFieldValue(new Date(t), Calendar.DAY_OF_MONTH);
          if ( dayOfMonth != _dayOfMonth ) {
-            TLongList keys = new TLongArrayList();
+            TLongArrayList keys = new TLongArrayList();
             List<int[]> data = new ArrayList<>();
             for ( int j = i + 1, length = _keys.size(); j < length; j++ ) {
                keys.add(_keys.get(j));
