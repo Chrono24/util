@@ -545,17 +545,21 @@ public class UsageTrackingService {
    }
 
 
-   public static class UsageTrackingData implements Serializable {
+   public static class UsageTrackingData implements ExternalizableBean {
 
       private static final long serialVersionUID = -6848208128738327020L;
+
+
       /** timestamps */
-      public TLongList _keys;
+      @externalize(1)
+      public TLongArrayList _keys;
 
       /**
        * _data[i] and _keys[i] belong together.
        * For each timestamp in keys there is an array of values.
        * The index of these int[] corresponds with the TrackingId.getId() value
        */
+      @externalize(2)
       public List<int[]> _data;
 
       transient TrackingId _exampleTrackingIdInstance;
