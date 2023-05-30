@@ -3,7 +3,6 @@ package util.usagetracking;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -55,7 +54,9 @@ public class UsageTrackingService {
 
    private static ConcurrentHashMap<Class<? extends TrackingId>, Function<? extends TrackingId, TrackingId>> MAPPERS = new ConcurrentHashMap<>();
 
-   /** Registers a TrackingId for later measurement, finished by a call to <code>finishGroupTimeMeasurements(.)</code> */
+   /**
+    * Registers a TrackingId for later measurement, finished by a call to <code>finishGroupTimeMeasurements(.)</code>
+    */
    public static void addForGroupTimeMeasurement( TrackingId id ) {
       UsageTrackingService instance = getInstance();
       id = map(id);
@@ -64,9 +65,11 @@ public class UsageTrackingService {
       }
    }
 
-   /** Adds the value for the TrackingId immediately, unless it has a slave. In that case it is added
+   /**
+    * Adds the value for the TrackingId immediately, unless it has a slave. In that case it is added
     * only on the mandatory call to <code>finishSlaveTimeMeasurement(sameId)</code>, which also adds
-    * the time measurement for the slave id. */
+    * the time measurement for the slave id.
+    */
    public static void addMeasurement( TrackingId id, int value ) {
       UsageTrackingService instance = getInstance();
       id = map(id);
@@ -84,6 +87,7 @@ public class UsageTrackingService {
     * Adds +1 to all TrackingIds previously registered with addForGroupTimeMeasurement(.) if they have a
     * slave, for which a measurement with <code>t</code> is added, too. If the registered TrackingId has
     * no slave, the time is added directly to the id.
+    *
     * @param t the time to be added
     */
    public static void finishGroupTimeMeasurements( int t ) {
@@ -104,8 +108,10 @@ public class UsageTrackingService {
       SAME_TIMEMEASUREMENT_GROUP.get().clear();
    }
 
-   /** A call to this method is mandatory, in order to finalize the addMeasurement for any TrackingId which
-    * has a slave! */
+   /**
+    * A call to this method is mandatory, in order to finalize the addMeasurement for any TrackingId which
+    * has a slave!
+    */
    public static void finishSlaveTimeMeasurement( TrackingId id ) {
       UsageTrackingService instance = getInstance();
       id = map(id);
@@ -265,8 +271,10 @@ public class UsageTrackingService {
       }
    }
 
-   /** Data structure for collected data: the data values are int arrays which belong to a timestamp key, provided by {@link #getKeys()}.
-    * The indices of the int array correspond to the constants defined in UsageTracking. */
+   /**
+    * Data structure for collected data: the data values are int arrays which belong to a timestamp key, provided by {@link #getKeys()}.
+    * The indices of the int array correspond to the constants defined in UsageTracking.
+    */
    public List<int[]> getData() {
       return _data;
    }
@@ -291,8 +299,10 @@ public class UsageTrackingService {
       return filenames;
    }
 
-   /** Data structure for collected data: the keys contain timestamps rounded by {@link #round(long)}, in ascending order.
-    * The corresponding values for each timestamp are to be found in the List from {@link #getData()}, using the same index. */
+   /**
+    * Data structure for collected data: the keys contain timestamps rounded by {@link #round(long)}, in ascending order.
+    * The corresponding values for each timestamp are to be found in the List from {@link #getData()}, using the same index.
+    */
    public TLongArrayList getKeys() {
       return _keys;
    }
@@ -549,8 +559,9 @@ public class UsageTrackingService {
 
       private static final long serialVersionUID = -6848208128738327020L;
 
-
-      /** timestamps */
+      /**
+       * timestamps
+       */
       @externalize(1)
       public TLongArrayList _keys;
 
@@ -563,6 +574,8 @@ public class UsageTrackingService {
       public List<int[]> _data;
 
       transient TrackingId _exampleTrackingIdInstance;
+
+      public UsageTrackingData() {}
 
       UsageTrackingData( TrackingId exampleTrackingIdInstance ) {
          _exampleTrackingIdInstance = exampleTrackingIdInstance;
