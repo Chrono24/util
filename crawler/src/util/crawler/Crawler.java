@@ -188,7 +188,7 @@ public class Crawler {
       }
 
       for ( CrawlItem errorPath : _errorPaths ) {
-         _log.error("Failed to get " + errorPath);
+         _log.error("Failed to get " + errorPath + ": status code " + errorPath._errorStatusCode);
       }
 
       if ( _proxyPool != null ) {
@@ -290,10 +290,10 @@ public class Crawler {
 
       List<String> startURLs = _params.getStartURLs();
       if ( _params.isLIFO() ) {
-         /* We have to do some voodoo, to make LIFO work: 
+         /* We have to do some voodoo, to make LIFO work:
           * We reverse the order of the startURLs, since it is unnatural, to put the first URLs to the end.
-          * But as soon as we add the first of our startURLs, it is executed. Not really LIFO. That's why we add the first URLs (un-reversed) first, 
-          * as long as there is a Thread available in our Threadpool.  
+          * But as soon as we add the first of our startURLs, it is executed. Not really LIFO. That's why we add the first URLs (un-reversed) first,
+          * as long as there is a Thread available in our Threadpool.
           */
          List<String> reversedStartURLs = new ArrayList<String>();
 
