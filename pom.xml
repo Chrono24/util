@@ -23,7 +23,7 @@
 
    <properties>
       <spring.version>3.2.13.RELEASE</spring.version>
-      <dump.version>2.0-c8d5bc69e8fda8f43eb6ab654acee443e26884a6</dump.version>
+      <dump.version>2.0-0307c5c242dc761c7e0172a85899ddf2564381f1</dump.version>
    </properties>
 
    <scm>
