@@ -21,8 +21,8 @@
       <dependency>
          <groupId>mkr</groupId>
          <artifactId>util-dump</artifactId>
+         <version>${dump.version}</version>
       </dependency>
 
    </dependencies>
 </project>
-
