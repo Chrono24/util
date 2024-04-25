@@ -19,9 +19,9 @@
          <version>3.0.3</version>
       </dependency>
       <dependency>
-         <groupId>jsr305</groupId>
+         <groupId>com.google.code.findbugs</groupId>
          <artifactId>jsr305</artifactId>
-         <version>1.0</version>
+         <version>3.0.2</version>
       </dependency>
       <dependency>
          <groupId>cglib</groupId>
