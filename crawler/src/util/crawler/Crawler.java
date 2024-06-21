@@ -396,6 +396,18 @@ public class Crawler {
          return _errorStatusCode;
       }
 
+      public String getHost() {
+         return _host;
+      }
+
+      public String getPath() {
+         return _path;
+      }
+
+      public String getScheme() {
+         return _scheme;
+      }
+
       @Override
       public int hashCode() {
          final int prime = 31;
