@@ -4,7 +4,7 @@
    <groupId>mkr</groupId>
    <artifactId>util-pom</artifactId>
    <name>mkr util pom</name>
-   <version>2.0-SNAPSHOT</version><!--util.version-->
+   <version>3.0-SNAPSHOT</version><!--util.version-->
    <packaging>pom</packaging>
 
    <modules>
