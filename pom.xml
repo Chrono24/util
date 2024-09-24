@@ -10,7 +10,6 @@
    <modules>
       <module>base</module>
       <module>crawler</module>
-      <module>swt</module>
       <module>xml</module>
       <module>svm</module>
       <module>http</module>
@@ -18,12 +17,16 @@
       <module>spring</module>
       <module>usagetracking</module>
       <module>xslt</module>
-      <!-- TODO: fix issues, re-enable <module>dumpass</module> -->
+
+      <!-- TODO: fix issues, re-enable
+         <module>swt</module>
+         <module>dumpass</module>
+       -->
    </modules>
 
    <properties>
       <spring.version>3.2.13.RELEASE</spring.version>
-      <dump.version>2.0-0307c5c242dc761c7e0172a85899ddf2564381f1</dump.version>
+      <dump.version>2.0-49c4a92d12f027c53b78981c7f3886587ec79a65</dump.version>
    </properties>
 
    <scm>
@@ -98,28 +101,28 @@
       <dependency>
          <groupId>org.slf4j</groupId>
          <artifactId>slf4j-api</artifactId>
-         <version>1.7.7</version>
+         <version>2.0.14</version>
       </dependency>
 
       <!-- for testing -->
       <dependency>
          <groupId>org.slf4j</groupId>
          <artifactId>slf4j-log4j12</artifactId>
-         <version>1.7.7</version>
+         <version>2.0.14</version>
          <scope>test</scope>
       </dependency>
 
       <dependency>
          <groupId>junit</groupId>
          <artifactId>junit</artifactId>
-         <version>4.5</version>
+         <version>4.13.2</version>
          <scope>test</scope>
       </dependency>
 
       <dependency>
          <groupId>org.assertj</groupId>
          <artifactId>assertj-core</artifactId>
-         <version>[3.13.2]</version>
+         <version>3.26.3</version>
          <scope>test</scope>
       </dependency>
 
@@ -211,12 +214,12 @@
          <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>1.4</version>
+            <version>2.17.0</version>
          </dependency>
          <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>[3, 4)</version>
+            <version>3.17.0</version>
          </dependency>
       </dependencies>
    </dependencyManagement>
