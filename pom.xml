@@ -25,6 +25,7 @@
    </modules>
 
    <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <spring.version>6.2.15</spring.version>
       <dump.version>2.0-49c4a92d12f027c53b78981c7f3886587ec79a65</dump.version>
    </properties>
