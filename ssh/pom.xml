@@ -36,8 +36,9 @@
       </testResources>
       <plugins>
          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>dependency-maven-plugin</artifactId>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>3.9.0</version>
             <executions>
                <execution>
                   <id>copy-dependencies</id>
@@ -54,6 +55,7 @@
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
+            <version>3.4.0</version>
             <executions>
                <execution>
                   <goals>
@@ -64,6 +66,7 @@
          </plugin>
          <plugin>
             <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.5.4</version>
             <configuration>
                <excludes>
                </excludes>
